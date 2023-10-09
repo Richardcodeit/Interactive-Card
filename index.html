@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+  <style>
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+    *{
+       padding: 0;
+       margin: 0;
+       box-sizing: border-box;
+    }
+    .cards{
+      width: 100%;
+      height: 250px;
+      background: linear-gradient( hsl(249, 99%, 64%) ,hsl(278, 94%, 30%));
+      position: relative;
+    }
+    .cards img {
+     width: 300px;
+    }
+    .card-two{
+      position: absolute;
+      top:30px;
+      right: 5%;
+    }
+    .card-one{
+      position: absolute;
+      top: 130px;
+      left: 5%;
+      z-index: 2;
+    }
+    .cardfront{
+      width: 100%;
+      position: relative;
+    }
+    .cardBack{
+      width: 100%;
+      position: relative;
+    }
+    .cardBack p{
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 50px;
+    }
+    .circle{
+      position: absolute;
+      top: 20px;
+      left: 15px;
+      display: flex;
+      gap: 15px;
+    }
+   .big-circle{
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    background-color: wheat;
+   } 
+   .small-circle{
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    border: 1px solid white;
+    border-radius: 20px;
+   }
+   .caldnumber{
+    position: absolute;
+    width: 100%;
+    font-size: 22px;
+    letter-spacing: 2px;
+    top: 80px;
+    left: 15px;
+    color: white;
+    font-weight: bolder;
+   }
+   .cardDateNum{
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    width: 90%;
+    top: 120px;
+    left: 15px;
+    font-size: 14px;
+    color: white;
+   }
+   .form{
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 100px;
+   }
+   form{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+   }
+   form .input, form .button{
+    width: 90%;
+    height: 40px;
+    position: relative;
+   }
+   .button button{
+    width: 100%;
+    height: 100%;
+    background-color:hsl(278, 68%, 11%);
+    color: white;
+    border: none;
+    border-radius: 5px;
+   }
+   form .input > label{
+    position: absolute;
+    top: -25px;
+    left: 0;
+
+   }
+   form .input input{
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    outline: none;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid rgb(126, 126, 126);
+   }
+   .exp-cvc {
+    display: flex;
+    gap: 10px;
+   }
+   .exp{
+    gap: 10px;
+    width: 40%;
+    display: flex;
+   }
+   .exp label{
+    position: absolute;
+    top: -25px;
+   }
+   .cvc{
+    position: relative;
+   }
+   .cvc label{
+    position: absolute;
+    left: 0;
+    top: -25px;
+   }
+   @media screen and (min-width:600px) {
+
+     .caldnumber{
+      font-size: 30px;
+     }
+     .cardDateNum{
+        top: 150px;
+    left: 15px;}
+    .cards img{
+      width: 400px;
+    }
+    .card-one {
+      top: 150px;
+    }
+    .form{
+      margin-top: 200px;
+    }
+   }
+   @media screen and (min-width:800px) {
+     .caldnumber{
+      font-size: 35px;
+      top: 100px;
+    left: 15px;
+     }
+      .cardDateNum{
+        top: 200px;
+    left: 15px;
+      }
+     .cards img{
+      width: 450px;
+    }
+    .card-one {
+      top: 170px;
+    }
+    .form{
+      margin-top: 240px;
+    }
+   }
+   @media screen and (min-width:1000px) {
+     .cards img{
+      width: 550px;
+    }
+    .cardBack p{
+      right: 70px;
+    }
+    .caldnumber{
+      font-size: 42px;
+     }
+     .cardDateNum{
+        top: 250px;
+    left: 15px;}
+    .card-one {
+      top: 190px;
+    }
+    .form{
+      margin-top: 300px;
+    }
+   }
+   @media screen and (min-width:1200px) {
+     .cards img{
+      width: 650px;
+    }
+    .card-one {
+      top: 220px;
+    }
+    .form{
+      margin-top: 370px;
+    }
+   }
+   @media screen and (min-width:1400px) {
+     body {
+      background-color: rgb(0, 0, 0);
+     }
+     .cards img{
+      width: 500px;
+    }
+    .cardDateNum{
+      top: 200px;
+      left: 15px;
+    }
+    .caldnumber{
+      font-size: 36px;
+     }
+    
+    .card-one {
+      top: 210px;
+      left: 220px;
+    }
+    .card-two {
+     top: 550px;
+     left: 250px;
+    }
+    .form{
+      margin-top: 330px;
+    }
+    main{
+      width: 90%;
+      display: flex;
+      gap: 300px;
+    }
+    .cards {
+      height: 100vh;
+    }
+   }
+   @media screen and (min-width:1600px){
+    .card-one {
+      top: 210px;
+      left: 260px;
+    }
+    .card-two {
+     top: 550px;
+     left: 290px;
+    }
+   }
+  </style>
+</head>
+<body>
+  <main>
+ <section class="cards">
+  <div class="card-one">
+  <div class="cardfront">
+  <img src="images/bg-card-front.png" alt="">
+    <div class="circle">
+      <div class="big-circle"></div>
+      <div class="small-circle"></div>
+     </div> 
+      <p class="caldnumber">0000 &nbsp; 0000 &nbsp; 0000 &nbsp; 0000</p>
+      <div class="cardDateNum">
+        <p class="cardname">Oladimeji Richard</p>
+         <p class="cardDate"><span class="month">00</span>/<span class="year">00</span></p>
+      </div>
+  </div>
+  </div>
+  <div class="card-two">
+    <div class="cardBack">
+    <img src="images/bg-card-back.png" alt="">
+      <p class="cvc">000</p>
+  </div>
+  </div>
+ </section>
+ <section class="form">
+  <form action="">
+    <div class="input">
+      <input type="text" id="cardName"  placeholder="eg. Oladimeji Richard" title="Is supposed to have numbers ">
+      <label for="cardName">CARDHOLDER NAME</label>
+    </div>
+    <div class="input">
+      <input type="number" id="cardNumber" maxlength="16" placeholder="eg. 1234 5678 9123 0000">
+      <label for="cardNumber">CARD NUMBER</label>
+    </div>
+    <div class="input exp-cvc" >
+      <div class="exp">
+      <input type="number" id="month" maxlength="2" placeholder="MM">
+      <input type="number" id="year" maxlength="2" placeholder="YY">
+      <label for="">EXP.DATE (MM/YY)</label>
+      </div>
+      <div class="cvc">
+        <input type="number" id="cvc" placeholder="eg. 123">
+        <label for="cvc">CVC</label>
+      </div>
+    </div>
+    <div class="button">
+      <button type="submit">Confirm</button>
+    </div>
+  </form>
+ </section>
+ <script>
+  const cardName = document.getElementById("cardName")
+  const cardNumber = document.getElementById("cardNumber")
+  const month = document.getElementById("month")
+  const year = document.getElementById("year")
+  const cvc = document.getElementById("cvc")
+  const cardNumPara = document.querySelector(".caldnumber")
+  const cardNamePara = document.querySelector(".cardname")
+  const cardMonthPara = document.querySelector(".month")
+  const cardYearPara = document.querySelector(".year")
+  const cardCvcPara = document.querySelector(".cvc")
+ 
+  cardNumber.addEventListener("input" , function( ) {
+    cardValue= cardNumber.value
+    const formate = []
+      for(let i = 0 ; i < cardValue.length ; i++){
+            formate.push(cardValue[i])
+            if((i + 1) % 4 === 0 && i !== cardValue.length){
+              formate.push(" ")
+            }
+      }
+      cardValue = formate.join("")
+      cardNumPara.textContent  = cardValue
+      if(cardValue.length === 16){
+        
+      }
+  })
+  cardName.addEventListener("input" , ()=>{
+    cardNamePara.textContent = cardName.value
+  })
+  month.addEventListener("input" , ()=>{
+    cardMonthPara.textContent = month.value
+  })
+  year.addEventListener("input" , ()=>{
+    cardYearPara.textContent = year.value
+  }) 
+  cvc.addEventListener("input" , ()=>{
+    cardCvcPara.textContent = cvc.value
+  })
+ </script>
+  </main>
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Oladimeji Richard</a>.
+  </div>
+</body>
+</html>
