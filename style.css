@@ -9,6 +9,7 @@
 body{
   font-family: 'Space Grotesk', sans-serif;
   font-size: 12px;
+  height: 100vh;
 }
 .cards{
   width: 100%;
